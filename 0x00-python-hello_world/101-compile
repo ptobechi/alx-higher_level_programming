@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Check if the PYFILE environment variable is set
 if [ -z "$PYFILE" ]; then
   echo "Error: PYFILE environment variable not set."
@@ -17,7 +16,7 @@ BASENAME=$(basename -- "$PYFILE")
 FILENAME_NOEXT="${BASENAME%.*}"
 
 # Compile the Python script to .pyc file
-python -m py_compile "$PYFILE"
+python3 -m py_compile "$PYFILE"
 
 # Rename the compiled file to have the extension .pyc
 mv "__pycache__/$FILENAME_NOEXT.cpython-*.pyc" "${FILENAME_NOEXT}c.pyc"
