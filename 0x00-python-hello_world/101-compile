@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if the PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+  echo "PYFILE environment variable is not set."
+  exit 1
+fi
+
+# Compile the Python script using the -m py_compile module
+python -m py_compile "$PYFILE"
+
+# Check if the compilation was successful
+if [ $? -eq 0 ]; then
+  echo "Compilation successful. Output file: ${PYFILE}c"
+else
+  echo "Compilation failed."
+fi
