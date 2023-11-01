@@ -1,19 +1,17 @@
 #!/usr/bin/python3
 import random
-num = random.randint(-10000, 10000)
 
-if num < 0:
-    remainder = num % -10
+number = random.randint(-10000, 10000)
+
+last_digit = abs(number) % 10
+
+comparison = ""
+
+if last_digit > 5:
+    comparison = "and is greater than 5"
+elif last_digit == 0:
+    comparison = "and is 0"
 else:
-    remainder = num % 10
+    comparison = "and is less than 6 and not 0"
 
-if remainder > 5:
-    print(
-        f"Last digit of {num:d} is {remainder} and is greater than 5"
-        )
-elif remainder < 6 and remainder != 0:
-    print(
-        f"Last digit of {num:d} is {remainder} and is less than 6 and not 0"
-        )
-elif remainder == 0:
-    print(f"Last digit of {num:d} is {remainder} and is 0")
+print(f"The string Last digit of {number} is {last_digit} {comparison}\n")
