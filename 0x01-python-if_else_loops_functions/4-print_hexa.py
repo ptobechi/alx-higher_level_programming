@@ -1,4 +1,5 @@
 #!/usr/bin/python3
 
-for num in range(99):
-    print('{}'.format(num), '{:#x}'.format(num))
+for char in range(97, 123):
+    if chr(char) not in 'qe':
+        print('{} = {:#x}'.format(char, char))
