@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 
 for num in range(99):
-    print(f'{num} = {num:X}')
-
+    print('{}'.format(num), '{:#x}'.format(num))
