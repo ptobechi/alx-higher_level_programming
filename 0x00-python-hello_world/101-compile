@@ -2,16 +2,27 @@
 
 # Check if the PYFILE environment variable is set
 if [ -z "$PYFILE" ]; then
-  echo "PYFILE environment variable is not set."
+  echo "Error: PYFILE environment variable not set."
   exit 1
 fi
 
-# Compile the Python script using the -m py_compile module
-python3 -m py_compile "$PYFILE"
-
-# Check if the compilation was successful
-if [ $? -eq 0 ]; then
-  echo "Compilation successful. Output file: ${PYFILE}c"
-else
-  echo "Compilation failed."
+# Check if the PYFILE file exists
+if [ ! -f "$PYFILE" ]; then
+  echo "Error: File $PYFILE not found."
+  exit 1
 fi
+
+# Extract the file name without extension
+BASENAME=$(basename -- "$PYFILE")
+FILENAME_NOEXT="${BASENAME%.*}"
+
+# Compile the Python script to .pyc file
+python -m py_compile "$PYFILE"
+
+# Rename the compiled file to have the extension .pyc
+mv "__pycache__/$FILENAME_NOEXT.cpython-*.pyc" "${FILENAME_NOEXT}c.pyc"
+
+# Clean up the __pycache__ directory
+rm -r "__pycache__"
+
+echo "Compiling $PYFILE ..."
