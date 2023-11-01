@@ -7,7 +7,7 @@ if [ -z "$PYFILE" ]; then
 fi
 
 # Compile the Python script using the -m py_compile module
-python -m py_compile "$PYFILE"
+python3 -m py_compile "$PYFILE"
 
 # Check if the compilation was successful
 if [ $? -eq 0 ]; then
