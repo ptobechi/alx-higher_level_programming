@@ -13,5 +13,5 @@ elif last_digit == 0:
 else:
     comparison = "less than 6 and not 0"
 
-output = f"Last digit of {number} is {last_digit} and is {comparison}\n"
+output = f"Last digit of {number} is {last_digit} and is {comparison}"
 print(output)
