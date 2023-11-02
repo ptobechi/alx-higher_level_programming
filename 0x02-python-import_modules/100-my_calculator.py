@@ -7,16 +7,16 @@ if __name__ == '__main__':
     n = len(argv)
 
     if n != 4:
-        print(f"Usage: {argv[0]} <a> <opranderator> <b>")
+        print(f"Usage: {argv[0]} <a> <operator> <b>")
         sys.exit(1)
     else:
         a = int(argv[1])
         b = int(argv[3])
         oprand = argv[2]
 
-        oprator = ["+", "-", "*", "/"]
-        if oprand not in oprator:
-            print("Unknown oprand. Available oprator: +, -, * and /")
+        oprators = ["+", "-", "*", "/"]
+        if oprand not in oprators:
+            print("Unknown oprator. Available oprators: +, -, * and /")
             sys.exit(1)
         else:
             if oprand == "+":
