@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 def safe_print_integer(value):
+    isInt = False
     try:
         print("{:d}".format(value))
-        return True
+        isInt = True
     except ValueError:
-        return False
-
+        isInt = False
+    finally:
+        return isInt
