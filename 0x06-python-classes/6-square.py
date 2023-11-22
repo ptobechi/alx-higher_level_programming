@@ -43,7 +43,8 @@ class Square:
             raise ValueError("size must be >= 0")
 
         if not isinstance(position, tuple) or len(position) != 2 or not all(
-                isinstance(element, int) and element >= 0 for element in position):
+                isinstance(element, int)
+                and element >= 0 for element in position):
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__size = size
@@ -85,7 +86,7 @@ class Square:
             The position of the square
         """
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         """
@@ -99,12 +100,13 @@ class Square:
         """
 
         if not isinstance(value, tuple) or len(value) == 2 or all(
-                element >= 0 and isinstance(element, int) for element in value):
+                element >= 0 and isinstance(element, int)
+                for element in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
     def area(self):
         """
-        area: 
+        area:
             calculate the area the square
         """
         return self.__size ** 2
@@ -112,7 +114,7 @@ class Square:
     def my_print(self):
         """
         Prints a visual representation of the square.
-        length: 
+        length:
             position of the square
 
         height:
