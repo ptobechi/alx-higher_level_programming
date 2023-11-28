@@ -136,7 +136,10 @@ class Rectangle:
             return result
 
         for element in range(self.__height):
-            result += Rectangle.print_symbol * self.__width + '\n'
+            for ele in range(self.__width):
+                result += Rectangle.print_symbol
+            if element < self.__height - 1:
+                result += '\n'
 
         return result
 
