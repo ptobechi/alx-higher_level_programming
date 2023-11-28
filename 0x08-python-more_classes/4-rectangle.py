@@ -133,7 +133,8 @@ class Rectangle:
         for element in range(self.__height):
             for ele in range(self.__width):
                 result += "#"
-            result += '\n'
+            if element < self.__height - 1:
+                result += '\n'
 
         return result
 
