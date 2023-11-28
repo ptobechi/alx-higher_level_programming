@@ -131,14 +131,16 @@ class Rectangle:
             return result
 
         for element in range(self.__height):
-            result += "#" * self.__width + '\n'
+            for ele in range(self.__width):
+                result += "#"
+            if element < self.__height - 1:
+                result += '\n'
 
         return result
 
 # my_rectangle = Rectangle(2, 4)
 # print("Area: {} - Perimeter: {}".format(my_rectangle.area(),
 # my_rectangle.perimeter()))
-#
 # print(str(my_rectangle))
 # print(repr(my_rectangle))
 #
