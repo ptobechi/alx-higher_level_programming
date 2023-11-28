@@ -7,6 +7,8 @@ The Rectangle class is a rectangle shape and can be used as a
 blueprint for creating rectangle objects
 """
 
+
+
 class Rectangle:
     """
     A Rectnagle class.
