@@ -131,7 +131,9 @@ class Rectangle:
             return result
 
         for element in range(self.__height):
-            result += "#" * self.__width + '\n'
+            for ele in range(self.__width):
+                result += "#"
+            result += '\n'
 
         return result
 
