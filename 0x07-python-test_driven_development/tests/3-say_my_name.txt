@@ -1,0 +1,30 @@
+"""
+
+=================================
+a test suite for formatted  name
+==================================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name(Tobechukwu, "Mamah")
+Traceback (most recent call last):
+	...
+NameError: name 'Tobechukwu' is not defined
+
+
+>>> say_my_name("Tobechukwu", Mamah)
+Traceback (most recent call last):
+	 ...
+NameError: name 'Mamah' is not defined
+
+
+>>> say_my_name(2023, "Mamah")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+>>> say_my_name("Tobechukwu", 2023)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+"""

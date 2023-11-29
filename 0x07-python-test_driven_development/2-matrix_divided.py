@@ -4,22 +4,26 @@
 A python script that divides element of a matrix
 """
 
+
 def matrix_divided(matrix, div):
     """
-    divides the element of a matrix
+    Divides the element of a matrix.
+
     Parameters:
-        matrix (list (int, float): matrix must be a list of int or float
+        matrix (list of lists): Matrix to be divided.
+        div (int or float): Divisor.
+
     Raises:
-        TypeError: if the matrix list is not a list of int or float and same
-        size in rows
-        ZeroDivisionError: on every devision by zero
+        TypeError: If the matrix is not a list of lists of int or float,
+        or if rows have different sizes. If div is not a number.
+        ZeroDivisionError: If div is equal to 0.
+
     Returns:
-        A new matrix
+        list of lists: New matrix with elements divided by div,
+        rounded to 2 decimal places.
     """
-    for element in matrix:
-        if not isinstance(element, (int, float)):
-            raise TypeError("matrix must be a matrix (list of 
-                    lists)of integers/floats")
+    if not all(isinstance(row, list) and all(isinstance(elem, (int, float)) for elem in row) for row in matrix):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     if all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
@@ -29,14 +33,14 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    
+
     result_matrix = [[round(elem / div, 2) for elem in row] for row in matrix]
 
     return result_matrix
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-print(matrix_divided(matrix, 3))
-print(matrix)
+# matrix = [
+#    [1, 2, 3],
+#    [4, 5, 6]
+# ]
+# print(matrix_divided(matrix, 3))
+# print(matrix)
+# print(matrix_divided([[1,2,3],[2,3, 3, 3, "3"]], 5))

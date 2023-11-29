@@ -5,7 +5,6 @@ A python script that sum up two integer
 """
 
 
-
 def add_integer(a, b=98):
     """
     add_integer:
@@ -25,6 +24,5 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
 
-    #return result of the addition
+    # return result of the addition
     return a + b
-
