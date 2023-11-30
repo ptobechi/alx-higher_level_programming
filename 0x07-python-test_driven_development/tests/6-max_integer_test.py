@@ -1,7 +1,17 @@
+#!/usr/bin/python3
+
+"""
+a python script with unittest
+"""
+
+
 import unittest
 from max_integer import max_integer
 
 class TestMaxInteger(unittest.TestCase):
+    """
+    TextMaxInteger class
+    """
     def test_regular_list(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
