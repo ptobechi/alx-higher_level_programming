@@ -1,0 +1,33 @@
+"""
+===========================================
+a test suite for text indentation function
+===========================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation([1, 2, 3, 4])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation((1,2,3,4))
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(1, 2, 3,4)
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() takes 1 positional argument but 4 were given
+
+
+>>> text_indentation(1)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+"""
