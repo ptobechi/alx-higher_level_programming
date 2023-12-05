@@ -5,6 +5,7 @@ a module that returns the dictionary description with simple python data
 structure
 """
 
+
 def class_to_json(obj):
     """
     Return a dictionary description with a simple data structure
@@ -36,8 +37,8 @@ def class_to_json(obj):
 
     json_dict = {}
     for attr_name in dir(obj):
-        if not callable(getattr(obj, attr_name)) and
-                        not attr_name.startswith("__"):
+        if not callable(getattr(obj, attr_name)) and \
+           not attr_name.startswith("__"):
             attr_value = getattr(obj, attr_name)
             if isinstance(attr_value, (list, dict, str, int, bool)):
                 json_dict[attr_name] = attr_value
