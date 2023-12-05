@@ -37,3 +37,11 @@ def add_items_to_json():
 
     # Print the updated list
     print(my_list)
+
+
+if __name__ == "__main__":
+    # Remove script name from arguments
+    arguments = sys.argv[1:]
+
+    # Add items to the list and save to JSON file
+    add_item(arguments)
