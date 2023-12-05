@@ -3,6 +3,8 @@
 """
 a function that writes an object to python file
 """
+import json
+
 
 def save_to_json_file(my_obj, filename):
     """
@@ -23,5 +25,5 @@ def save_to_json_file(my_obj, filename):
     """
 
     with open(filename, "w") as file:
-        json_string = str(my_obj)
+        json_string = json.dumps(my_obj)
         file.write(json_string)
