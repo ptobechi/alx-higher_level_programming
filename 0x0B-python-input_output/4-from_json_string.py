@@ -26,5 +26,5 @@ def from_json_string(my_str):
         {'name': 'John', 'age': 25}
     """
 
-    python_obj = json.dumps(my_str)
+    python_obj = json.dump(my_str)
     return python_obj
