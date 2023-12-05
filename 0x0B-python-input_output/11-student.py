@@ -4,6 +4,7 @@
 a module that defines a student based of 10-student.py
 """
 
+
 class Student:
     """
     Class representing a student.
@@ -41,12 +42,12 @@ class Student:
         """
         if attrs is not None and all(isinstance(attr, str) for attr in attrs):
             json_dict = {attr: getattr(self, attr) for attr
-                                       in attrs if hasattr(self, attr)}
+                         in attrs if hasattr(self, attr)}
         else:
             json_dict = {}
             for attr_name in dir(self):
-                if not callable(getattr(self, attr_name)) and
-                                not attr_name.startswith("__"):
+                if not callable(getattr(self, attr_name)) and \
+                   not attr_name.startswith("__"):
                     attr_value = getattr(self, attr_name)
                     if isinstance(attr_value, (str, int)):
                         json_dict[attr_name] = attr_value
