@@ -4,6 +4,7 @@
 a module that demostrates the pascal triangle
 """
 
+
 def pascal_triangle(n):
     """
     Generate Pascal's triangle up to the nth row.
