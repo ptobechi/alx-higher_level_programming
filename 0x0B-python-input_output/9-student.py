@@ -4,6 +4,7 @@
 a module that defines a student by firstname, lastname and age
 """
 
+
 class Student:
     """
     Class representing a student.
@@ -37,8 +38,8 @@ class Student:
         """
         json_dict = {}
         for attr_name in dir(self):
-            if not callable(getattr(self, attr_name)) and
-                            not attr_name.startswith("__"):
+            if not callable(getattr(self, attr_name)) and \
+               not attr_name.startswith("__"):
                 attr_value = getattr(self, attr_name)
                 if isinstance(attr_value, (str, int)):
                     json_dict[attr_name] = attr_value
