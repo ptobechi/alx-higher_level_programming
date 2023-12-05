@@ -3,6 +3,8 @@
 """
 a module that returns an object of python data structure
 """
+import json
+
 
 def from_json_string(my_str):
     """
@@ -24,5 +26,5 @@ def from_json_string(my_str):
         {'name': 'John', 'age': 25}
     """
 
-    python_obj = eval(my_str)
+    python_obj = json.dumps(my_str)
     return python_obj
