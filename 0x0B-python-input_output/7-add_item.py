@@ -44,4 +44,4 @@ if __name__ == "__main__":
     arguments = sys.argv[1:]
 
     # Add items to the list and save to JSON file
-    add_item(arguments)
+    add_items_to_json(arguments)
