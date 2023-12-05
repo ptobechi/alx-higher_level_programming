@@ -3,19 +3,21 @@
 """
 a script that reads stdin line by line and computes metrics
 """
-
 import sys
 import signal
+
 
 def signal_handler(sig, frame):
     print_metrics()
     sys.exit(0)
+
 
 def print_metrics():
     total_size = sum(file_sizes)
     print(f"Total file size: {total_size}")
     for status_code in sorted(status_code_counts):
         print(f"{status_code}: {status_code_counts[status_code]}")
+
 
 def process_line(line):
     parts = line.split(" ")
@@ -29,6 +31,7 @@ def process_line(line):
             status_code_counts[status_code] += 1
         else:
             status_code_counts[status_code] = 1
+
 
 try:
     file_sizes = []
