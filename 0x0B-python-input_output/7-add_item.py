@@ -3,14 +3,15 @@
 """
 a module that add all the elements of a python script
 """
-
 import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
+
 def add_items_to_json():
     """
-    Add all command line arguments to a Python list and save them to a JSON file.
+    Add all command line arguments to a Python list and
+    save them to a JSON file.
 
     Usage:
     $ python add_items_to_json.py item1 item2 item3
