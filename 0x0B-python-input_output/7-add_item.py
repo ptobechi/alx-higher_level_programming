@@ -20,15 +20,19 @@ def add_items_to_json():
     If the file doesn't exist, it will be created.
     No file permission exceptions are managed.
     """
+    file_name = "add_item.json"
 
-    # Load existing items from the file, if any
-    try:
-        items_list = load_from_json_file("add_item.json")
-    except FileNotFoundError:
-        items_list = []
+    # Load existing list from the file if it exists
+    if os.path.exists(file_name):
+        my_list = load_from_json_file(file_name)
+    else:
+        my_list = []
 
-    # Add command line arguments to the list
-    items_list.extend(sys.argv[1:])
+    # Add new items from command line arguments
+    my_list.extend(args)
 
-    # Save the updated list to the file
-    save_to_json_file(items_list, "add_item.json")
+    # Save the updated list to the JSON file
+    save_to_json_file(my_list, file_name)
+
+    # Print the updated list
+    print(my_list)
