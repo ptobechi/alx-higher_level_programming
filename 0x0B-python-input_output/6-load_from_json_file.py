@@ -3,6 +3,8 @@
 """
 a module that creates an object from a file
 """
+import json
+
 
 def load_from_json_file(filename):
     """
@@ -27,5 +29,5 @@ def load_from_json_file(filename):
 
     with open(filename, "r") as file:
         json_string = file.read()
-        python_obj = eval(json_string)
+        python_obj = json.loads(json_string)
     return python_obj
