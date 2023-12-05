@@ -4,6 +4,7 @@
 A module that write a string to text (utf-8)
 """
 
+
 def write_file(filename="", text=""):
     """
     Write a string to a text file (UTF-8) and return
