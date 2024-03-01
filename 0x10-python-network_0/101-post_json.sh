@@ -11,4 +11,3 @@ if jq . "$json_file" >/dev/null 2>&1; then
 else
     echo "Not a valid JSON"
 fi
-
