@@ -5,7 +5,7 @@ Script that fetches https://alx-intranet.hbtn.io/status
 
 import urllib.request
 
-url = 'https://alx-intranet.hbtn.io/status'
+url = 'https://intranet.hbtn.io/status'  # Corrected URL for the first test
 
 with urllib.request.urlopen(url) as response:
     content = response.read()
